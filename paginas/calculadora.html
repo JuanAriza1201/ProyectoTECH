@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Energías Renovables</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Energías Renovables</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../paginas/datos.html">Datos Históricos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../paginas/dashboard.html">Dashboard</a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+       
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">Calculadora de Consumo de Energía Renovable</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="calculatorForm">
+                            <div class="mb-3">
+                                <label for="consumption" class="form-label">Consumo Eléctrico Total (kWh/mes)</label>
+                                <input type="number" class="form-control" id="consumption" required>
+                                <div class="form-text">Ingrese su consumo mensual promedio</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Región</label>
+                                <select class="form-select" id="region" required>
+                                    <option value="">Seleccione su región</option>
+                                    <option value="north">Norte</option>
+                                    <option value="center">Centro</option>
+                                    <option value="south">Sur</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </form>
+
+                        <!-- Resultados -->
+                        <div id="results" class="mt-4" style="display: none;">
+                            <h5>Resultados del Análisis</h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>Porcentaje de Energía Renovable</h6>
+                                            <div class="progress mb-3">
+                                                <div id="renewablePercentage" 
+                                                     class="progress-bar bg-success" 
+                                                     role="progressbar" 
+                                                     style="width: 0%">
+                                                    0%
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    Consumo Renovable: <span id="renewableConsumption">0</span> kWh
+                                                </li>
+                                                <li class="list-group-item">
+                                                    Consumo Convencional: <span id="conventionalConsumption">0</span> kWh
+                                                </li>
+                                                <li class="list-group-item">
+                                                    CO₂ Evitado: <span id="co2Saved">0</span> kg
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/calculator.js"></script>
+</body>
+</html>

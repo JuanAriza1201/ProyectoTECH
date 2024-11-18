@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Energías Renovables</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Energías Renovables</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../paginas/datos.html">Datos Históricos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../paginas/calculadora.html">Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../paginas/dashboard.html">Dashboard</a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Dashboard de Energías Renovables</h1>
+        <!-- Filtros -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="yearFilter" class="form-label">Año:</label>
+                <select id="yearFilter" class="form-select">
+                    <!-- Años cargados por JavaScript -->
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="energyFilter" class="form-label">Tipo de Energía:</label>
+                <select id="energyFilter" class="form-select">
+                    <option value="all">Todas</option>
+                    <option value="solar">Solar</option>
+                    <option value="wind">Eólica</option>
+                    <option value="hydro">Hidroeléctrica</option>
+                    <option value="geo">Geotérmica</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn btn-primary w-100 mb-4" onclick="updateDashboard()">Actualizar Dashboard</button>
+
+        <!-- Gráficas -->
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <canvas id="productionChart"></canvas>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <canvas id="distributionChart"></canvas>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <canvas id="capacityTrendChart"></canvas>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <canvas id="comparisonChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

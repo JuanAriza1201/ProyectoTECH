@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Energías Renovables</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Energías Renovables</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/datos.html">Datos Históricos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/calculadora.html">Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginas/dashboard.html">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Información Principal -->
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Energía Solar</h2>
+                        <img src="img/solar-energy.jpg" class="img-fluid rounded mb-3" alt="Energía Solar">
+                        <p class="card-text">
+                            La energía solar es una fuente de energía renovable obtenida del sol, que se convierte en electricidad
+                            o se utiliza para calentar espacios y agua. Este tipo de energía es fundamental para reducir nuestra
+                            dependencia de los combustibles fósiles y mitigar el cambio climático. 
+                            <a href="https://es.wikipedia.org/wiki/Energ%C3%ADa_solar" target="_blank">Más información</a>.
+                        </p>
+                        <h3>Ventajas</h3>
+                        <ul>
+                            <li>Energía limpia y renovable</li>
+                            <li>Reduce la huella de carbono</li>
+                            <li>Bajo mantenimiento</li>
+                            <li>Tecnología en constante mejora</li>
+                        </ul>
+                        <h3>Desventajas</h3>
+                        <ul>
+                            <li>Dependencia de la luz solar</li>
+                            <li>Alto costo inicial de instalación</li>
+                            <li>Impacto ambiental en la producción de paneles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sección de Energía Eólica -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Energía Eólica</h2>
+                        <img src="img/wind-energy.jpg" class="img-fluid rounded mb-3" alt="Energía Eólica">
+                        <p class="card-text">
+                            La energía eólica se genera mediante el uso de aerogeneradores que convierten la fuerza del viento en electricidad.
+                            Es una de las fuentes de energía renovable de más rápido crecimiento y juega un papel importante en la transición
+                            hacia sistemas energéticos sostenibles.
+                            <a href="https://es.wikipedia.org/wiki/Energ%C3%ADa_e%C3%B3lica" target="_blank">Más información</a>.
+                        </p>
+                        <h3>Ventajas</h3>
+                        <ul>
+                            <li>No emite gases de efecto invernadero</li>
+                            <li>Fuente de energía inagotable</li>
+                            <li>Costes de operación bajos</li>
+                        </ul>
+                        <h3>Desventajas</h3>
+                        <ul>
+                            <li>Impacto visual y acústico</li>
+                            <li>Intermitencia y dependencia del viento</li>
+                            <li>Posible impacto en la vida silvestre</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar con Estadísticas y Gráficos -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        Estadísticas Rápidas
+                    </div>
+                    <div class="card-body">
+                        <canvas id="renewableChart"></canvas>
+                        <div class="mt-3">
+                            <h5>Datos Clave:</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Capacidad Global: 580 GW</li>
+                                <li class="list-group-item">Crecimiento Anual: 22%</li>
+                                <li class="list-group-item">Eficiencia Promedio: 20%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recursos Externos -->
+                <div class="card mt-4">
+                    <div class="card-header bg-info text-white">
+                        Recursos Externos
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.irena.org/" target="_blank">Agencia Internacional de Energías Renovables (IRENA)</a></li>
+                            <li><a href="https://ourworldindata.org/renewable-energy" target="_blank">Our World in Data - Energía Renovable</a></li>
+                            <li><a href="https://www.statista.com/topics/1129/renewable-energy/" target="_blank">Statista - Energía Renovable</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
