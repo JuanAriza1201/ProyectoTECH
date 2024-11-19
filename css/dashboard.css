@@ -1,29 +1,60 @@
+/* Fuente personalizada */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
 }
 
-h1 {
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
     color: #333;
 }
 
+/* Navbar personalizada */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #007bff !important;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #0056b3 !important;
+}
+
+/* Estilo de los gráficos */
 canvas {
-    max-width: 100%;
-    height: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
 }
 
-.form-label {
-    font-weight: bold;
-}
-
-.btn {
-    font-size: 16px;
-    padding: 10px 20px;
-}
-
+/* Márgenes adicionales y sombra */
 .container {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.row {
+    margin-bottom: 30px;
+}
+
+/* Sombra sutil para los gráficos */
+canvas.shadow-sm {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Espaciado entre los gráficos */
+.col-md-6 {
+    margin-bottom: 20px;
+}
+
+/* Mejorando la visibilidad en móvil */
+@media (max-width: 767px) {
+    .row {
+        margin-bottom: 20px;
+    }
 }

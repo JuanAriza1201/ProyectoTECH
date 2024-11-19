@@ -2,105 +2,87 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos Históricos - Energías Renovables</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-    <link href="css/datos.css" rel="stylesheet">
+    <title>Datos de Energía Renovable</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Archivo de CSS personalizado -->
+    <link rel="stylesheet" href="css/datos.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Energías Renovables</a>
+            <a class="navbar-brand" href="index.html">Energía Renovable</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="../index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="datos.html">Datos Históricos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calculadora.html">Calculadora</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">Dashboard</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="datos.html">Datos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculadora.html">Calculadora</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Contenido Principal -->
-    <div class="container">
-        <h2 class="text-center text-primary">Datos Históricos de Energías Renovables (1965-2022)</h2>
-        
-        <!-- Filtros -->
-        <div class="card mb-4">
-            <div class="card-header bg-primary text-white">Filtros de Búsqueda</div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        <label class="form-label">Año Inicio</label>
-                        <select class="form-select" id="yearStart">
-                            <!-- Se llenará con JavaScript -->
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Año Fin</label>
-                        <select class="form-select" id="yearEnd">
-                            <!-- Se llenará con JavaScript -->
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Tipo de Energía</label>
-                        <select class="form-select" id="energyType">
-                            <option value="all">Todas</option>
-                            <option value="solar">Solar</option>
-                            <option value="wind">Eólica</option>
-                            <option value="hydro">Hidroeléctrica</option>
-                            <option value="geo">Geotérmica</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3 d-flex align-items-end">
-                        <button class="btn btn-primary w-100" onclick="filterData()">Aplicar Filtros</button>
-                    </div>
-                </div>
-            </div>
+    <header class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4">Datos de Energía Renovable</h1>
+            <p class="lead">Visualiza y filtra datos históricos sobre energía renovable.</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <h2 class="text-center mb-4">Selecciona los datos que deseas visualizar</h2>
+        <div class="mb-4">
+            <label for="filtro-datos" class="form-label">Filtrar por tipo de energía:</label>
+            <select class="form-select" id="filtro-datos">
+                <option value="todos">Todos</option>
+                <option value="solar">Energía Solar</option>
+                <option value="eolica">Energía Eólica</option>
+                <option value="hidro">Hidroeléctrica</option>
+                <option value="geotermica">Geotérmica</option>
+                <option value="biocombustible">Biocombustibles</option>
+            </select>
         </div>
 
-        <!-- Tabla de Datos -->
-        <div class="card">
-            <div class="card-header bg-success text-white">Datos de Energías Renovables</div>
-            <div class="card-body">
-                <table id="renewableDataTable" class="table table-striped table-bordered">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Año</th>
-                            <th>Solar (TWh)</th>
-                            <th>Eólica (TWh)</th>
-                            <th>Hidroeléctrica (TWh)</th>
-                            <th>Geotérmica (TWh)</th>
-                            <th>Total (TWh)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Se llenará con JavaScript -->
-                    </tbody>
-                </table>
-            </div>
+        <!-- Botón para visualizar los datos -->
+        <div class="mb-4">
+            <button class="btn btn-primary" id="btn-visualizar" onclick="filtrarDatos()">Visualizar Datos</button>
         </div>
-    </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-    <script src="../js/data.js"></script>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Año</th>
+                        <th>Fuente de Energía</th>
+                        <th>Producción (GWh)</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-datos">
+                    <!-- Filas de datos dinámicamente cargadas -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Energía Renovable. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Papaparse (librería para procesar CSV en JavaScript) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <!-- Archivo de JavaScript personalizado -->
+    <script src="js/data.js"></script>
 </body>
 </html>

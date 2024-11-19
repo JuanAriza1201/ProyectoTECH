@@ -1,0 +1,53 @@
+/* estilos.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f8fb;
+    color: #333;
+}
+
+.hero-section {
+    background: url('path/to/your/image.jpg') no-repeat center center;
+    background-size: cover;
+    height: 70vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #00aaff;
+}
+
+/* Estilos para las secciones de iconos */
+section .text-center img {
+    transition: transform 0.3s;
+}
+
+section .text-center img:hover {
+    transform: scale(1.1);
+}
