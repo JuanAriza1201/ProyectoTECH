@@ -8,6 +8,7 @@ h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: #333;
+    text-align: center;
 }
 
 /* Navbar personalizada */
@@ -26,20 +27,34 @@ h2 {
     color: #0056b3 !important;
 }
 
+/* Contenedor para las gráficas */
+.container {
+    margin-top: 50px;
+}
+
+/* Organizar las gráficas con flexbox o grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las gráficas */
+    justify-content: center; /* Centra las gráficas */
+    margin-bottom: 30px;
+}
+
+/* Cada gráfico en su columna */
+.col-md-6 {
+    flex: 1 1 45%; /* 45% de ancho en pantallas medianas */
+    margin-bottom: 20px;
+    max-width: 600px; /* Tamaño máximo para las gráficas */
+}
+
 /* Estilo de los gráficos */
 canvas {
     background-color: #ffffff;
     border-radius: 8px;
     border: 1px solid #ddd;
-}
-
-/* Márgenes adicionales y sombra */
-.container {
-    margin-top: 50px;
-}
-
-.row {
-    margin-bottom: 30px;
+    width: 100%; /* Asegura que el canvas ocupe todo el ancho del contenedor */
+    height: 300px; /* Ajusta la altura de las gráficas */
 }
 
 /* Sombra sutil para los gráficos */
@@ -47,14 +62,17 @@ canvas.shadow-sm {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Espaciado entre los gráficos */
-.col-md-6 {
-    margin-bottom: 20px;
-}
-
 /* Mejorando la visibilidad en móvil */
 @media (max-width: 767px) {
     .row {
         margin-bottom: 20px;
+    }
+
+    .col-md-6 {
+        flex: 1 1 100%; /* Las gráficas ocupan el 100% del ancho en pantallas pequeñas */
+    }
+
+    canvas {
+        height: 250px; /* Ajusta la altura de las gráficas en dispositivos móviles */
     }
 }

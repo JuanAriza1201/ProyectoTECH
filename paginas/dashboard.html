@@ -10,18 +10,19 @@
     <!-- Vinculación con fuente personalizada -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Vinculación con CSS personalizado -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body class="bg-light">
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-5">
         <div class="container">
-            <a class="navbar-brand" href="#">Energía Limpia</a>
+            <a class="navbar-brand" href="../index.html">Energía Renovable</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="datos.html">Datos</a></li>
                     <li class="nav-item"><a class="nav-link" href="calculadora.html">Calculadora</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
@@ -30,29 +31,33 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h2 class="text-center mb-4">Dashboard de Energía Renovable</h2>
-        
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <canvas id="graficoBarras" class="shadow-sm"></canvas>
+    <!-- Contenido principal -->
+    <main>
+        <section id="charts">
+            <h2>Dashboard De Energias</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <canvas id="area-chart"></canvas>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <canvas id="graficoTorta" class="shadow-sm"></canvas>
-            </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="row">
-            <div class="col-md-6">
-                <canvas id="graficoLineas" class="shadow-sm"></canvas>
-            </div>
-            <div class="col-md-6">
-                <canvas id="graficoArea" class="shadow-sm"></canvas>
-            </div>
-        </div>
-    </div>
-
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ body {
 }
 
 .hero-section {
-    background: url('path/to/your/image.jpg') no-repeat center center;
+    background: url('../img/energia.jpg') no-repeat center center;
     background-size: cover;
     height: 70vh;
     color: white;
