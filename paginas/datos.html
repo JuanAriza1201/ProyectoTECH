@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Energía Renovable</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Archivo de CSS personalizado -->
+    <link rel="stylesheet" href="css/datos.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">Energía Renovable</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="datos.html">Datos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculadora.html">Calculadora</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4">Datos de Energía Solar</h1>
+            <p class="lead">Información histórica sobre el consumo de energía solar.</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Entidad</th>
+                        <th>Código</th>
+                        <th>Año</th>
+                        <th>Electricidad de Solar (TWh)</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-datos">
+                    <!-- Filas de datos dinámicamente cargadas -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>© 2024 Energía Renovable. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Papaparse -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <!-- Archivo de JavaScript personalizado -->
+    <script src="../js/data.js"></script>
+</body>
+</html>

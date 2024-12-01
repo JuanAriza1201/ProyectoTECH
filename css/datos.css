@@ -1,0 +1,43 @@
+/* estilos.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f8fb;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+main h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
