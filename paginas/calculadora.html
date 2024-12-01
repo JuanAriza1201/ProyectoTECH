@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo de Energía Renovable</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Archivo de CSS personalizado -->
+    <link rel="stylesheet" href="css/calculadora.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Energía Renovable</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../paginas/datos.html">Datos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="calculadora.html">Calculadora</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../paginas/dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-success text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4">Calculadora de Energía Renovable</h1>
+            <p class="lead">Estima el porcentaje de energía renovable en tu consumo eléctrico total.</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <h2 class="text-center mb-4">Calcula tu Consumo de Energía Renovable</h2>
+        <form id="form-calculadora" class="mx-auto" style="max-width: 600px;">
+            <div class="mb-3">
+                <label for="consumoTotal" class="form-label">Consumo Eléctrico Total (kWh)</label>
+                <input type="number" class="form-control" id="consumoTotal" placeholder="Introduce tu consumo en kWh" required>
+            </div>
+            <div class="d-grid">
+                <button type="button" class="btn btn-success" onclick="calcularPorcentaje()">Calcular</button>
+            </div>
+        </form>
+
+        <div class="resultados mt-5 text-center">
+            <h3 id="resultado-porcentaje" class="text-primary"></h3>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Energía Renovable. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Archivo de JavaScript personalizado -->
+    <script src="../js/calculator.js"></script>
+</body>
+</html>
